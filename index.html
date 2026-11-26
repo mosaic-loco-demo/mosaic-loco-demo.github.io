@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="description" content="MOSAIC: Mobile Onboard Sparse-Visual Autonomy for Quadruped Loco-Manipulation in Complex Environments." />
+  <title>MOSAIC · Project Page</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&amp;family=Google+Sans+Text:wght@400;500;700&amp;family=Roboto+Mono:wght@400;500&amp;display=swap" media="print" onload="this.media='all'" />
+</head>
+<body>
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#top"><span class="logo-dot"></span>MOSAIC</a>
+      <nav aria-label="Project sections">
+        <a href="#abstract">Abstract</a>
+        <a href="#method">Method</a>
+        <a href="#video-atlas">Experiments</a>
+      </nav>
+      <a class="nav-cta" href="#video-atlas">Explore videos <span>↗</span></a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="paper-hero page-width">
+      <p class="project-kicker">ONBOARD QUADRUPED MOBILE MANIPULATION</p>
+      <h1>MOSAIC: Mobile Onboard Sparse-Visual Autonomy for Quadruped Loco-Manipulation in Complex Environments</h1>
+      <p class="authors"><a href="#about">Anonymous Authors</a></p>
+      <p class="affiliation">A2 quadruped · Piper arm · wrist-mounted RGB-D · onboard autonomy</p>
+      <div class="paper-actions">
+        <a class="action action-primary" href="#teaser"><span>▶</span> Video</a>
+        <a class="action action-secondary" href="#method"><span>▣</span> System overview</a>
+        <a class="action action-secondary" href="#video-atlas"><span>▦</span> Video atlas</a>
+      </div>
+    </section>
+
+    <section class="teaser page-width" id="teaser">
+      <div class="teaser-frame">
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-label="MOSAIC featured real-robot demonstration">
+          <source src="网站专用/九宫格剪辑版.mp4" type="video/mp4" />
+        </video>
+        <div class="teaser-overlay"><span class="teaser-live"></span> Featured real-robot demonstration</div>
+      </div>
+      <p class="teaser-caption"><strong>MOSAIC</strong> connects sparse-visual navigation, a feasibility-conditioned Handoff, bounded body-pose adjustment, and vision-guided grasping with the quadruped base stationary.</p>
+    </section>
+
+    <section class="paper-section narrow" id="abstract">
+      <p class="section-label">Abstract</p>
+      <h2>Navigation arrival does not guarantee grasp readiness.</h2>
+      <p>MOSAIC is a fully onboard quadruped mobile-manipulation framework that connects local navigation to grasping through an empirical grasp-capability field. Built from wrist-camera observations and simulated grasp trials, the field guides navigation toward configurations favorable for manipulation and scores candidate body-height and pitch adjustments after arrival. A feasibility-conditioned Handoff also checks target validity, foot support, and body stability. The robot then adjusts its posture within bounded ranges and performs vision-guided grasping while the base remains stationary.</p>
+    </section>
+
+    <section class="paper-section wide" id="method">
+      <div class="section-heading"><div><p class="section-label">Method</p><h2>An empirical grasp-capability field.<br /><span>A feasibility-conditioned Handoff.</span></h2></div><p class="section-aside">The same field shapes navigation rewards and scores feasible body-height and pitch candidates near the navigation endpoint.</p></div>
+      <figure class="system-figure">
+        <img src="assets/mosaic-method-overview.png" width="2320" height="1160" alt="MOSAIC system overview showing the shared sparse target, onboard hardware, capability-guided local navigation, body-pose refinement, and fixed-base arm execution" loading="lazy" />
+        <figcaption><strong>System overview.</strong> A wrist-camera target representation supports capability-field-guided navigation and post-navigation pose selection. Handoff proceeds only when target observation, foot support, and body stability conditions are met, followed by posture adjustment and fixed-base grasp execution.</figcaption>
+      </figure>
+      <div class="stage-grid">
+        <article><span>01</span><h3>Navigate</h3><p>The onboard policy approaches the target while active wrist viewing maintains the observations needed for later posture selection and grasping.</p></article>
+        <article><span>02</span><h3>Handoff and adjust</h3><p>Target validity, foot support, body stability, and a feasible capability-field candidate determine whether navigation can hand off to bounded height and pitch adjustment.</p></article>
+        <article><span>03</span><h3>Grasp</h3><p>After posture adjustment, the stationary quadruped performs a vision-guided arm grasp using the target geometry and camera extrinsics.</p></article>
+      </div>
+    </section>
+
+    <section class="stats-band page-width" aria-label="Real-robot evaluation results">
+      <div><strong>90.8%</strong><span>end-to-end success</span></div><div><strong>109 / 120</strong><span>successful real-robot trials</span></div><div><strong>04</strong><span>real-world conditions</span></div><div><strong>03</strong><span>vision-loss trials</span></div>
+    </section>
+
+    <section class="paper-section wide video-atlas" id="video-atlas">
+      <div class="section-heading"><div><p class="section-label">Experiments</p><h2>Real-world video atlas</h2></div></div>
+      <div class="atlas-plan" id="atlas-plan" role="group" aria-label="Jump to a video category"></div>
+      <div class="atlas-toolbar">
+        <span id="result-count" class="clip-count" aria-live="polite"></span>
+        <div class="atlas-tools">
+          <label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" aria-label="Search videos" placeholder="Search videos" autocomplete="off" /></label>
+          <button class="view-toggle active" type="button" data-view="grid" aria-label="Grid view" aria-pressed="true">▦</button>
+          <button class="view-toggle" type="button" data-view="list" aria-label="List view" aria-pressed="false">☷</button>
+          <button class="view-toggle" id="sort-toggle" type="button" aria-label="Reverse display order" aria-pressed="false">↕</button>
+        </div>
+      </div>
+      <div id="video-groups"></div>
+      <div class="empty-state" id="empty-state" hidden><p id="empty-message"></p><button type="button" id="clear-search">Clear search</button></div>
+    </section>
+
+    <section class="paper-section narrow protocol" id="about">
+      <p class="section-label">Real-robot evaluation</p><h2>109 successful tasks<br /><span>across 120 trials.</span></h2>
+      <p>The four evaluated conditions cover different target heights, stairs, outdoor terrain, and a slope. The full-task success rate counts a trial as successful only when the target is placed in the robot’s rear-mounted basket.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer page-width"><span>MOSAIC · project page</span><span>Onboard quadruped mobile manipulation</span><a href="#top">Back to top ↑</a></footer>
+
+  <div class="modal" id="video-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="modal-backdrop" data-close-modal></div><div class="modal-card"><button class="modal-close" type="button" data-close-modal aria-label="Close video">×</button><video id="modal-video" controls playsinline></video><div class="modal-meta"><div><p class="modal-category" id="modal-category"></p><h2 id="modal-title"></h2></div></div></div>
+  </div>
+  <script src="data/videos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
