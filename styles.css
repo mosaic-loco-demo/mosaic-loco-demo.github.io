@@ -136,7 +136,7 @@ a.plan-card[aria-current="location"] {
 .video-card .card-media video { position: relative; z-index: 1; opacity: 0; }
 .video-card.is-playing .card-media video { opacity: 1; }
 .video-card .play-icon, .video-card .card-shade { z-index: 2; }
-.video-card.is-playing .play-icon, .video-card.is-playing .card-shade { opacity: 0; }
+.video-card.is-playing .card-shade { opacity: 0; }
 .video-grid { column-gap: 36px; row-gap: 32px; }
 .video-card .card-title { overflow: hidden; text-align: center; text-overflow: ellipsis; white-space: nowrap; }
 .video-grid.has-mixed-aspects { display: flex; align-items: stretch; gap: 36px; }

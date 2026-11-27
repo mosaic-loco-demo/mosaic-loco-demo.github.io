@@ -121,10 +121,6 @@
     });
 
     groups.querySelectorAll('.video-grid.is-carousel').forEach((carousel) => {
-      let pointerStartX = 0;
-      let scrollStart = 0;
-      let isPointerDown = false;
-      let isDragging = false;
       let suppressClick = false;
 
       carousel.addEventListener('wheel', (event) => {
@@ -134,40 +130,39 @@
       }, { passive: false });
 
       carousel.addEventListener('pointerdown', (event) => {
+        suppressClick = false;
         if (event.pointerType !== 'mouse' || event.button !== 0) return;
-        pointerStartX = event.clientX;
-        scrollStart = carousel.scrollLeft;
-        isPointerDown = true;
-        isDragging = false;
-        carousel.setPointerCapture(event.pointerId);
-      });
-
-      carousel.addEventListener('pointermove', (event) => {
-        if (!isPointerDown) return;
-        const distance = event.clientX - pointerStartX;
-        if (!isDragging && Math.abs(distance) < 6) return;
-        isDragging = true;
-        carousel.classList.add('is-dragging');
-        carousel.scrollLeft = scrollStart - distance;
+        const pointerStartX = event.clientX;
+        const scrollStart = carousel.scrollLeft;
+        let isDragging = false;
         event.preventDefault();
+        const pointerId = event.pointerId;
+        const listeners = new AbortController();
+
+        const finishDragging = () => {
+          listeners.abort();
+          carousel.classList.remove('is-dragging');
+          suppressClick = isDragging;
+        };
+
+        const listenerOptions = { signal: listeners.signal };
+        window.addEventListener('pointermove', (move) => {
+          if (move.pointerId !== pointerId) return;
+          const distance = move.clientX - pointerStartX;
+          if (!isDragging && Math.abs(distance) < 6) return;
+          isDragging = true;
+          carousel.classList.add('is-dragging');
+          carousel.scrollLeft = scrollStart - distance;
+        }, listenerOptions);
+        const endPointerDrag = (end) => {
+          if (end.pointerId === pointerId) finishDragging();
+        };
+        window.addEventListener('pointerup', endPointerDrag, listenerOptions);
+        window.addEventListener('pointercancel', endPointerDrag, listenerOptions);
+        window.addEventListener('blur', finishDragging, listenerOptions);
       });
-
-      const finishDragging = () => {
-        if (!isPointerDown) return;
-        isPointerDown = false;
-        carousel.classList.remove('is-dragging');
-        if (!isDragging) return;
-        suppressClick = true;
-        window.setTimeout(() => {
-          suppressClick = false;
-        }, 0);
-      };
-
-      carousel.addEventListener('pointerup', finishDragging);
-      carousel.addEventListener('pointercancel', finishDragging);
-      carousel.addEventListener('lostpointercapture', finishDragging);
       carousel.addEventListener('click', (event) => {
-        if (!suppressClick) return;
+        if (!suppressClick || event.detail === 0) return;
         event.preventDefault();
         event.stopPropagation();
         suppressClick = false;
