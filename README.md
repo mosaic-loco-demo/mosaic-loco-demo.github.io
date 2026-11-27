@@ -22,7 +22,7 @@ The video gallery presents real-world experiments across six task categories.
 - **Indoor Grasping** — Objects on steps, tables, and other elevated surfaces.
 - **Outdoor Grasping** — Grasping on grass, wooded terrain, slopes, stairs, and uneven ground.
 - **Navigation-Based Pick-and-Place** — Integrated navigation, grasping, and placement.
-- **Follow-up Sequences** — Extended demonstrations of navigation-based manipulation.
+- **Target Following** — Following a target on outdoor grass and steps.
 - **Long-Horizon Tasks** — Multi-stage navigation and manipulation sequences.
 - **Extended Physical Interactions** — Plug insertion and removal, knob turning, and button pressing.
 

@@ -3,7 +3,7 @@
     { id: 'ordinary-indoor', label: 'Indoor Grasping' },
     { id: 'ordinary-outdoor', label: 'Outdoor Grasping' },
     { id: 'navigation-grasp-place', label: 'Navigation-Based Pick-and-Place' },
-    { id: 'follow-up', label: 'Follow up' },
+    { id: 'follow-up', label: 'Target Following' },
     { id: 'long-navigation', label: 'Long-Horizon Tasks' },
     { id: 'extended-interaction', label: 'Extended Interaction Tasks' },
   ];
