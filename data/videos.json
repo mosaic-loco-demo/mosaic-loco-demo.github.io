@@ -3,7 +3,7 @@
     "id": "ordinary-outdoor-02",
     "category": "ordinary-outdoor",
     "title": "Grasping in Outdoor Ravine Terrain",
-    "file": "网站专用/户外沟壑.mp4",
+    "file": "videos/户外沟壑.mp4",
     "tags": [
       "outdoor",
       "ravine",
@@ -16,7 +16,7 @@
     "id": "ordinary-outdoor-03",
     "category": "ordinary-outdoor",
     "title": "Continuous Object Retrieval in a Wooded Area",
-    "file": "网站专用/树林连续拾取.mp4",
+    "file": "videos/树林连续拾取.mp4",
     "tags": [
       "woodland",
       "repeated grasping",
@@ -29,7 +29,7 @@
     "id": "ordinary-indoor-01",
     "category": "ordinary-indoor",
     "title": "Grasping a Bottle from a High Counter",
-    "file": "网站专用/室内高处瓶子.mp4",
+    "file": "videos/室内高处瓶子.mp4",
     "tags": [
       "bottle",
       "counter",
@@ -41,7 +41,7 @@
     "id": "ordinary-indoor-03",
     "category": "ordinary-indoor",
     "title": "Continuous Object Grasping Indoors",
-    "file": "网站专用/室内连续抓取.mp4",
+    "file": "videos/室内连续抓取.mp4",
     "aspect": "2:1",
     "tags": [
       "indoor",
@@ -55,7 +55,7 @@
     "id": "extended-interaction-01",
     "category": "extended-interaction",
     "title": "Pressing an Elevator Button",
-    "file": "网站专用/按压电梯按钮.mp4",
+    "file": "videos/按压电梯按钮.mp4",
     "tags": [
       "button press",
       "elevator"
@@ -66,7 +66,7 @@
     "id": "extended-interaction-03",
     "category": "extended-interaction",
     "title": "Plug Insertion and Removal at a Desktop Outlet",
-    "file": "网站专用/桌面拔插头.mp4",
+    "file": "videos/桌面拔插头.mp4",
     "aspect": "4:3",
     "tags": [
       "plug insertion",
@@ -79,7 +79,7 @@
     "id": "long-navigation-01",
     "category": "long-navigation",
     "title": "Collecting Multiple Ping-Pong Balls",
-    "file": "网站专用/连续捡乒乓球.mp4",
+    "file": "videos/连续捡乒乓球.mp4",
     "tags": [
       "outdoors",
       "multiple objects",
@@ -92,7 +92,7 @@
     "id": "long-navigation-02",
     "category": "long-navigation",
     "title": "Collecting Tennis Balls on a Court",
-    "file": "网站专用/捡网球.mp4",
+    "file": "videos/捡网球.mp4",
     "tags": [
       "tennis court",
       "ball",
@@ -104,7 +104,7 @@
     "id": "long-navigation-03",
     "category": "navigation-grasp-place",
     "title": "Picking Up a Face Mask and Putting It in a Trash Bin",
-    "file": "网站专用/捡口罩放垃圾桶.mp4",
+    "file": "videos/捡口罩放垃圾桶.mp4",
     "tags": [
       "navigation",
       "grasping",
@@ -118,7 +118,7 @@
     "id": "extended-interaction-02",
     "category": "extended-interaction",
     "title": "Turning a Control Knob",
-    "file": "网站专用/旋转按钮.mp4",
+    "file": "videos/旋转按钮.mp4",
     "tags": [
       "knob turning",
       "rotary control",
@@ -130,7 +130,7 @@
     "id": "navigation-grasp-place-01",
     "category": "navigation-grasp-place",
     "title": "Picking Up a Ping-Pong Ball and Placing It in a Cup",
-    "file": "网站专用/捡乒乓球放杯子.mp4",
+    "file": "videos/捡乒乓球放杯子.mp4",
     "tags": [
       "navigation",
       "grasping",
@@ -144,7 +144,7 @@
     "id": "ordinary-outdoor-04",
     "category": "ordinary-outdoor",
     "title": "Grasping on an Outdoor Uphill Slope",
-    "file": "网站专用/户外上坡.mp4",
+    "file": "videos/户外上坡.mp4",
     "tags": [
       "outdoor",
       "uphill slope",
@@ -157,7 +157,7 @@
     "id": "ordinary-indoor-02",
     "category": "ordinary-indoor",
     "title": "Climbing Indoor Steps to Grasp an Object",
-    "file": "网站专用/室内上台阶.mp4",
+    "file": "videos/室内上台阶.mp4",
     "tags": [
       "indoor",
       "stairs",
@@ -170,7 +170,7 @@
     "id": "ordinary-indoor-04",
     "category": "ordinary-indoor",
     "title": "Grasping an Object After Descending Indoor Steps",
-    "file": "网站专用/室内下台阶.mp4",
+    "file": "videos/室内下台阶.mp4",
     "tags": [
       "indoor",
       "descending steps",
@@ -183,7 +183,7 @@
     "id": "navigation-grasp-place-02",
     "category": "navigation-grasp-place",
     "title": "Picking Up a Tennis Ball and Placing It in the Basket",
-    "file": "网站专用/捡网球放篮子.mp4",
+    "file": "videos/捡网球放篮子.mp4",
     "tags": [
       "navigation",
       "grasping",
@@ -197,7 +197,7 @@
     "id": "follow-up-01",
     "category": "follow-up",
     "title": "Following on Outdoor Grass",
-    "file": "网站专用/户外草地跟随.mp4",
+    "file": "videos/户外草地跟随.mp4",
     "tags": [
       "follow up",
       "following",
@@ -210,7 +210,7 @@
     "id": "follow-up-02",
     "category": "follow-up",
     "title": "Following Up on Outdoor Steps",
-    "file": "网站专用/上台阶follow.mp4",
+    "file": "videos/上台阶follow.mp4",
     "tags": [
       "follow up",
       "following",
@@ -224,7 +224,7 @@
     "id": "ordinary-outdoor-05",
     "category": "ordinary-outdoor",
     "title": "Climbing Outdoor Steps",
-    "file": "网站专用/户外上台阶.mp4",
+    "file": "videos/户外上台阶.mp4",
     "tags": [
       "outdoor",
       "steps",
@@ -237,7 +237,7 @@
     "id": "ordinary-outdoor-06",
     "category": "ordinary-outdoor",
     "title": "Grasping an Apple Outdoors",
-    "file": "网站专用/室外抓苹果.mp4",
+    "file": "videos/室外抓苹果.mp4",
     "tags": [
       "outdoor",
       "apple",
@@ -250,7 +250,7 @@
     "id": "ordinary-indoor-05",
     "category": "ordinary-indoor",
     "title": "Grasping a Bottle from a Table",
-    "file": "网站专用/室内桌上瓶子.mp4",
+    "file": "videos/室内桌上瓶子.mp4",
     "tags": [
       "indoor",
       "table",
