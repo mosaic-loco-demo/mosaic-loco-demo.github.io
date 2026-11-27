@@ -45,13 +45,24 @@
       : `<div class="plan-card plan-empty">${summary}</div>`;
   }).join('');
 
-  plan.querySelectorAll('a').forEach((link) => {
+  const categoryLinks = plan.querySelectorAll('a');
+  categoryLinks.forEach((link) => {
     link.addEventListener('click', () => {
       if (!search.value) return;
       search.value = '';
       renderCards();
     });
   });
+
+  function updateCurrentCategory() {
+    categoryLinks.forEach((link) => {
+      const current = link.hash === window.location.hash;
+      link.setAttribute('aria-current', current ? 'location' : 'false');
+    });
+  }
+
+  window.addEventListener('hashchange', updateCurrentCategory);
+  updateCurrentCategory();
 
   function renderCard(clip) {
     const title = escapeHtml(clip.title);
