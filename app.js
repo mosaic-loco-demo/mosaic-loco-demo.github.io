@@ -15,16 +15,12 @@
   const emptyMessage = document.querySelector('#empty-message');
   const search = document.querySelector('#search');
   const clearSearch = document.querySelector('#clear-search');
-  const sortToggle = document.querySelector('#sort-toggle');
-  const viewToggles = document.querySelectorAll('.view-toggle[data-view]');
   const modal = document.querySelector('#video-modal');
   const modalVideo = document.querySelector('#modal-video');
   const modalTitle = document.querySelector('#modal-title');
   const modalCategory = document.querySelector('#modal-category');
   const modalClose = modal.querySelector('.modal-close');
 
-  let listView = false;
-  let reverse = false;
   let activeCard;
 
   const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (char) => ({
@@ -79,18 +75,15 @@
 
   function renderCards() {
     const query = search.value.trim().toLowerCase();
-    const categoriesInOrder = reverse ? [...clipsByCategory].reverse() : clipsByCategory;
     let total = 0;
 
-    groups.classList.toggle('list-view', listView);
-    groups.innerHTML = categoriesInOrder.map(({ id, label, clips }) => {
+    groups.innerHTML = clipsByCategory.map(({ id, label, clips }) => {
       const matching = clips.filter((clip) => {
         const terms = [label, clip.title, ...(clip.tags || [])];
         return terms.join(' ').toLowerCase().includes(query);
       });
       if (!matching.length) return '';
       total += matching.length;
-      if (reverse) matching.reverse();
       const hasMixedAspects = new Set(matching.map((clip) => clip.aspect || '16:9')).size > 1;
       const isCarousel = id === 'ordinary-indoor' || id === 'ordinary-outdoor';
       return `
@@ -205,19 +198,5 @@
     renderCards();
     search.focus();
   });
-  sortToggle.addEventListener('click', () => {
-    reverse = !reverse;
-    sortToggle.setAttribute('aria-pressed', String(reverse));
-    renderCards();
-  });
-  viewToggles.forEach((button) => button.addEventListener('click', () => {
-    listView = button.dataset.view === 'list';
-    viewToggles.forEach((item) => {
-      item.classList.toggle('active', item === button);
-      item.setAttribute('aria-pressed', String(item === button));
-    });
-    groups.classList.toggle('list-view', listView);
-  }));
-
   renderCards();
 })();
